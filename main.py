@@ -45,9 +45,7 @@ screen.onkeypress(right_paddle_up, 'Up')
 screen.onkeypress(left_paddle_up, 'w')
 screen.onkeypress(right_paddle_down, 'Down')
 screen.onkeypress(left_paddle_down, 's')
-
 counter = 0
-
 
 
 def run_game_loop():
@@ -56,6 +54,7 @@ def run_game_loop():
         screen.update()
         time.sleep(0.2)
     screen.exitonclick()
+
 
 if __name__ == "__main__":
     run_game_loop()
