@@ -1,5 +1,6 @@
 from turtle import Turtle
 
+
 class Net(Turtle):
     min_x = 500
     max_x = 500

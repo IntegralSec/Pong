@@ -3,6 +3,7 @@ import time
 from paddle import Paddle
 from net import Net
 from ball import Ball
+from score import Score
 
 # ==============================
 # Helper Functions
@@ -39,13 +40,15 @@ left_paddle = Paddle(SCREEN_WIDTH, SCREEN_HEIGHT, "left")
 right_paddle = Paddle(SCREEN_WIDTH, SCREEN_HEIGHT, "right")
 net = Net(SCREEN_WIDTH, SCREEN_HEIGHT)
 ball = Ball(SCREEN_WIDTH, SCREEN_HEIGHT)
-
+right_score = Score('right')
+left_score = Score('left')
 screen.listen()
 screen.onkeypress(right_paddle_up, 'Up')
 screen.onkeypress(left_paddle_up, 'w')
 screen.onkeypress(right_paddle_down, 'Down')
 screen.onkeypress(left_paddle_down, 's')
 counter = 0
+
 
 
 def run_game_loop():
