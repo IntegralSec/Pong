@@ -61,13 +61,20 @@ def wall_collision():
 
 
 def paddle_collision():
-    print("Left Paddle Y = " + str(left_paddle.ycor()))
-    left_paddle_x = left_paddle.xcor()
-    right_paddle_x = right_paddle.xcor()
-    if right_paddle_x <= ball.xcor():
-        print("Right Paddle X Collision")
-    if left_paddle_x >= ball.xcor():
-        print("Left Paddle X Collision")
+    paddle_right_x = (SCREEN_WIDTH / 2) - 100
+    paddle_left_x = ((SCREEN_WIDTH / 2) - 100) * -1
+
+    if ball.distance(left_paddle) <= 50 and ball.xcor() <= paddle_left_x:
+        print("Hit Paddle")
+        ball.bounce('left')
+        return
+
+    if ball.distance(right_paddle) <= 50 and ball.xcor() <= paddle_right_x:
+        print("Hit Paddle")
+        ball.bounce('left')
+        return
+
+
 
 
 # ==============================
@@ -102,7 +109,7 @@ def run_game_loop():
     while game_running:
         wall_collision()
         paddle_collision()
-        time.sleep(0.05)
+        time.sleep(0.09)
         screen.update()
         ball.move()
     screen.exitonclick()

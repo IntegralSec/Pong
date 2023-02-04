@@ -7,7 +7,7 @@ class Paddle(Turtle):
     window_right = 450
     window_bottom = -250
     window_top = 250
-    MOVE_DISTANCE = 10
+    MOVE_DISTANCE = 30
     PADDLE_SIZE = 3
     paddle_side = "left"
     COLOR = "white"
@@ -51,7 +51,7 @@ class Paddle(Turtle):
                 self.goto(self.xcor(), (ycor - self.MOVE_DISTANCE))
 
         if direction == 'up':
-            if ycor >= 220:
+            if ycor >= 210:
                 return
             else:
                 self.goto(self.xcor(), (ycor + self.MOVE_DISTANCE))
